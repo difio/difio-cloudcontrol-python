@@ -5,7 +5,7 @@ It compiles a list of locally installed Python packages and sends it to
 
 
 Installing on your cloudControl application
---------------------------------------
+-------------------------------------------
 
 Create an account at <http://www.dif.io>
 
