@@ -17,28 +17,26 @@ Add a dependency in your `requirements.txt` file
 
     echo 'difio-cloudcontrol-python' >> requirements.txt
 
-Set the following environment variables on Heroku
-
-::
-
-    cctlapp config:set DIFIO_USER_ID=YourUserID
-    heroku config:set DIFIO_APP_NAME=MyApplication
-    heroku config:set DIFIO_APP_URL=http://myapp.cloudcontrolled.com
-
 Then commit, push and deploy your application to cloudControl
 
 ::
 
     git commit -a -m "added dependency on Difio"
-    cctrlapp app_name push
-    cctrlapp app_name deploy
+    cctrlapp APP_NAME push
+    cctrlapp APP_NAME deploy
+
+Configure your user credentials
+
+::
+
+    cctrlapp APP_NAME/DEP_NAME addon.add config.free --DIFIO_USER_ID=YourUserID
 
 
 Execute the registration script to submit the information to Difio
 
 ::
 
-    cctrlapp app_name/deployment_name run /app/.heroku/venv/bin/difio-cctrl-python
+    cctrlapp APP_NAME/DEP_NAME run /app/.heroku/venv/bin/difio-cctrl-python
     Running `/app/.heroku/venv/bin/difio-cctrl-python` attached to terminal... up, run.1
     Success, registered/updated application 8370e3be-6e54-462d-9ca9-224301c29a1d
 
@@ -55,4 +53,4 @@ re-submit the information to Difio.
 
 ::
 
-    cctrlapp app_name/deployment_name run /app/.heroku/venv/bin/difio-cctrl-python
+    cctrlapp APP_NAME/DEP_NAME run /app/.heroku/venv/bin/difio-cctrl-python

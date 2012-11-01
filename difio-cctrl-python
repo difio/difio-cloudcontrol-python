@@ -33,8 +33,10 @@ from exceptions import BaseException
 from difio_cctrl_python import version
 from pip.util import get_installed_distributions
 
+creds = json.loads(open('/srv/creds/creds.json', 'r').read())
+
 data = {
-    'user_id'    : int(os.environ['DIFIO_USER_ID']),
+    'user_id'    : int(creds['CONFIG']['CONFIG_VARS']['DIFIO_USER_ID']),
     'app_name'   : os.environ['DEP_NAME'],
     'app_uuid'   : os.environ['DEP_ID'],
     'app_type'   : 'python-%d.%d.%d' % (sys.version_info[0], sys.version_info[1], sys.version_info[2]),
