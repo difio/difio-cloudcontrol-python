@@ -1,15 +1,15 @@
-Difio registration agent for CloudControl / Python applications.
+Difio registration agent for cloudControl / Python applications.
 
 It compiles a list of locally installed Python packages and sends it to
 <http://www.dif.io>.
 
 
-Installing on your CloudControl application
+Installing on your cloudControl application
 --------------------------------------
 
 Create an account at <http://www.dif.io>
 
-Create a Python application on CloudControl
+Create a Python application on cloudControl
 
 Add a dependency in your `requirements.txt` file
 
@@ -25,21 +25,21 @@ Set the following environment variables on Heroku
     heroku config:set DIFIO_APP_NAME=MyApplication
     heroku config:set DIFIO_APP_URL=http://myapp.cloudcontrolled.com
 
-Then commit, push and deploy your application to CloudControl
+Then commit, push and deploy your application to cloudControl
 
 ::
 
     git commit -a -m "added dependency on Difio"
-    cctrlapp myapp push
-    cctrlapp myapp deploy
+    cctrlapp app_name push
+    cctrlapp app_name deploy
 
 
 Execute the registration script to submit the information to Difio
 
 ::
 
-    cctrlapp myapp run /srv/www/.heroku/venv/bin/difio-cctrl-python
-    Running `/srv/www/.heroku/venv/bin/difio-cctrl-python` attached to terminal... up, run.1
+    cctrlapp app_name/deployment_name run /app/.heroku/venv/bin/difio-cctrl-python
+    Running `/app/.heroku/venv/bin/difio-cctrl-python` attached to terminal... up, run.1
     Success, registered/updated application 8370e3be-6e54-462d-9ca9-224301c29a1d
 
 That's it, you can now check your application statistics at
@@ -55,4 +55,4 @@ re-submit the information to Difio.
 
 ::
 
-    cctrlapp myapp run /srv/www/.heroku/venv/bin/difio-cctrl-python
+    cctrlapp app_name/deployment_name run /app/.heroku/venv/bin/difio-cctrl-python

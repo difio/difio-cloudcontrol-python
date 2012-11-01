@@ -19,13 +19,13 @@ with open('README.rst') as file:
 setup(
     name=name,
     version=version,
-    description='Difio registration agent for CloudControl / Python applications',
+    description='Difio registration agent for cloudControl / Python applications',
     author='Alexander Todorov',
     author_email='atodorov@nospam.dif.io',
     url = 'http://github.com/difio/difio-cloudcontrol-python',
     packages=['difio_cctrl_python'],
     scripts=['difio-cctrl-python'],
-    keywords = ['CloudControl', 'difio', 'updates', 'cloud', 'diff'],
+    keywords = ['cloudControl', 'difio', 'updates', 'cloud', 'diff'],
     classifiers = [
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",

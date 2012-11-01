@@ -40,7 +40,7 @@ data = {
     'app_uuid'   : gethostname(), # that looks like some UUID
     'app_type'   : 'python-%d.%d.%d' % (sys.version_info[0], sys.version_info[1], sys.version_info[2]),
     'app_url'    : os.environ['DIFIO_APP_URL'], # TODO,
-    'app_vendor' : 3, # CloudControl
+    'app_vendor' : 3, # cloudControl
     'pkg_type'   : 0, # Python PyPI
     'installed'  : [],
 }
