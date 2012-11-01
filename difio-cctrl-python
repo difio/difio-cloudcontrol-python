@@ -29,17 +29,16 @@ import sys
 import json
 import urllib
 import httplib
-from socket import gethostname
 from exceptions import BaseException
 from difio_cctrl_python import version
 from pip.util import get_installed_distributions
 
 data = {
     'user_id'    : int(os.environ['DIFIO_USER_ID']),
-    'app_name'   : os.environ['DIFIO_APP_NAME'], # TODO,
-    'app_uuid'   : gethostname(), # that looks like some UUID
+    'app_name'   : os.environ['DEP_NAME'],
+    'app_uuid'   : os.environ['DEP_ID'],
     'app_type'   : 'python-%d.%d.%d' % (sys.version_info[0], sys.version_info[1], sys.version_info[2]),
-    'app_url'    : os.environ['DIFIO_APP_URL'], # TODO,
+    'app_url'    : "http://%s.%s" % (os.environ['DEP_NAME'].split('/')[0], os.environ['DOMAIN']),
     'app_vendor' : 3, # cloudControl
     'pkg_type'   : 0, # Python PyPI
     'installed'  : [],
